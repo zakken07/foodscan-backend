@@ -3,12 +3,19 @@
   "builds": [
     {
       "src": "api/analyze.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
+      "src": "/api/analyze",
+      "dest": "api/analyze.py"
+    },
+    {
+      "src": "/api/health",
       "dest": "api/analyze.py"
     }
   ]
