@@ -2,17 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/analyze.py",
+      "src": "main.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "api/analyze.py"
+      "dest": "main.py"
     }
   ],
   "env": {
     "GEMINI_API_KEY": "@gemini_api_key"
   }
 }
+
