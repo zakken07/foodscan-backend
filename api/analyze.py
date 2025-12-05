@@ -23,7 +23,7 @@ def analyze_food_image(image_data):
         image_bytes = base64.b64decode(image_data)
         
         # Inisialisasi model Gemini Flash 2.0
-        model = genai.GenerativeModel('gemini-2.0-flash')
+        model = genai.GenerativeModel('gemini-2.0-flash-exp')
         
         # Prompt untuk analisis makanan
         prompt = """
@@ -132,10 +132,9 @@ def health():
         'message': 'FoodScan AI Backend is running'
     }), 200
 
-# Untuk Vercel serverless function
-def handler(request):
-    with app.request_context(request.environ):
-        return app.full_dispatch_request()
+# Handler untuk Vercel Serverless (PENTING!)
+# Vercel akan memanggil fungsi ini
+app.wsgi_app = app
 
 if __name__ == '__main__':
     # Untuk testing lokal
