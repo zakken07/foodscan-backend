@@ -23,7 +23,7 @@ def analyze_food_image(image_data):
         image_bytes = base64.b64decode(image_data)
         
         # Inisialisasi model Gemini Flash 2.0
-        model = genai.GenerativeModel('gemini-2.0-flash-exp')
+        model = genai.GenerativeModel('gemini-2.0-flash')
         
         # Prompt untuk analisis makanan
         prompt = """
@@ -139,3 +139,4 @@ app.wsgi_app = app
 if __name__ == '__main__':
     # Untuk testing lokal
     app.run(debug=True, host='0.0.0.0', port=5000)
+
