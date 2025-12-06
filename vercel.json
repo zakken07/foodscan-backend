@@ -2,15 +2,16 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/analyze.py",
+      "src": "api/index.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "api/analyze.py"
+      "dest": "api/index.py"
     }
   ]
 }
+
 
