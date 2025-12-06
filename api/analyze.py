@@ -35,7 +35,7 @@ def analyze_food_image(image_data):
         image_bytes = base64.b64decode(image_data)
         
         # Init model
-        model = genai.GenerativeModel('gemini-2.0-flash')
+        model = genai.GenerativeModel('gemini-2.5-flash')
         
         # Prompt
         prompt = """
